@@ -9,7 +9,7 @@ const pool = new Pool({
 const adapter = new PrismaPg(pool)
 const prisma = new PrismaClient({adapter})
 
-export async function getAllusers() {
+export async function getAllUsers() {
     return prisma.user.findMany()
 }
 

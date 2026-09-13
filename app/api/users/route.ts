@@ -1,7 +1,7 @@
-import { getAllusers, CreateUser } from "../../services/user.service"
+import { getAllUsers, CreateUser } from "../../services/user.service"
 
 export async function GET() {
-  const users = await getAllusers()
+  const users = await getAllUsers()
   return Response.json(users)
 }
 
