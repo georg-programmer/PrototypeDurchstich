@@ -1,7 +1,8 @@
+import { User } from "@/app/generated/prisma";
 import Button from "./Button";
 
 export interface Props {
-    users: object[];
+    users: User[];
 }
 
 const UserTable = ({ users }: Props) => {
