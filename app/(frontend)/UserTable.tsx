@@ -1,4 +1,4 @@
-import { User } from "@/app/generated/prisma";
+import { User } from "@/app/generated/prisma/client";
 import Button from "./Button";
 
 export interface Props {
