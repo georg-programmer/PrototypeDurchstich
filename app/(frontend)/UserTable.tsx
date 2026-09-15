@@ -20,7 +20,7 @@ const UserTable = ({ users }: Props) => {
             </thead>
             <tbody>
                 {users.map((user, index) => (
-                    <tr key={user ? user.id ?? index : index} className="odd:bg-white even:bg-gray-100">
+                    <tr key={user?.id ?? index} className="odd:bg-white even:bg-gray-100">
                         <td>
                             <Button link={`/edit/${user.id ?? index}`}>Edit</Button>
                         </td>

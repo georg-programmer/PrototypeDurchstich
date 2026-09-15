@@ -1,8 +1,10 @@
+import {User} from "@/app/generated/prisma/client"
+
 import Button from "./Button";
 
 interface Props {
     action: (formData: FormData) => void | Promise<void>;
-    user?: object;//TODO: Optionale mitgabe von usern, damit form bei edit mit daten gefüllt werden kann.
+    user?: User;//TODO: Optionale mitgabe von usern, damit form bei edit mit daten gefüllt werden kann.
 }
 
 const UserForm = ({ action, user }: Props) => {
@@ -19,23 +21,12 @@ const UserForm = ({ action, user }: Props) => {
         </div>
 
         <div className="flex flex-col gap-y-0.125 bg-accent rounded-md p-0.25 ">
-            <label htmlFor="email">E-Mail</label>
-            <input
-                id="email"
-                name="email"
-                type="text"
-                defaultValue={user ?user.email ?? "" : ""}
-                className="bg-gray-200 border-3 border-main rounded-sm focus:border-4"
-                required />
-        </div>
-
-        <div className="flex flex-col gap-y-0.125 bg-accent rounded-md p-0.25 ">
             <label htmlFor="geburtstag">Birthday</label>
             <input
                 id="geburtstag"
                 name="geburtstag"
                 type="date"
-                defaultValue={user ? user.birthday ?? "" : ""}
+                defaultValue={user?.geburtstag.toString() ?? ""}
                 className="bg-gray-200 border-3 border-main rounded-sm focus:border-4"
                 required />
         </div>
@@ -44,7 +35,7 @@ const UserForm = ({ action, user }: Props) => {
             <input
                 id="istVergeben"
                 name="istVergeben"
-                defaultValue={user ? user.name ?? false : ""}
+                defaultValue={user?.istVergeben.toString() ?? 0}
                 type="checkbox"
                 className="bg-gray-200 border-3 border-main rounded-sm accent-main focus:border-4" />
             <label htmlFor="istVergeben">Has a Relationship</label>
