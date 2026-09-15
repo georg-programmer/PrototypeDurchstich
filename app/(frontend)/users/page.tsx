@@ -12,7 +12,7 @@ const IndexPage = async () => {
         <>
             <Header>All Users</Header>
             <Button link="/users/add">Add User</Button>
-            <div className="h-2"/>
+            <div className="h-0.5"/>
             <UserTable users= {users}></UserTable>
         </>
     );

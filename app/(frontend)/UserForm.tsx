@@ -1,52 +1,56 @@
+import Button from "./Button";
+
 interface Props {
     action: (formData: FormData) => void | Promise<void>;
-    //TODO: Optionale mitgabe von usern, damit form bei edit mit daten gefüllt werden kann.
+    user?: object;//TODO: Optionale mitgabe von usern, damit form bei edit mit daten gefüllt werden kann.
 }
 
-const UserForm = ({ action }: Props) => {
-    return <form action={action} className="flex flex-col gap-y-1">
-        <div className="flex flex-col gap-y-0.5 bg-accent rounded-md p-1 ">
+const UserForm = ({ action, user }: Props) => {
+    return <form action={action} className="flex flex-col gap-y-0.25 max-w-">
+        <div className="flex flex-col gap-y-0.125 bg-accent rounded-md p-0.25 ">
             <label htmlFor="name">Name</label>
             <input
                 id="name"
                 name="name"
                 type="text"
+                defaultValue={user ? user.name ?? "" : ""}
                 className="bg-gray-200 border-3 border-main rounded-sm focus:border-4"
                 required />
         </div>
 
-        <div className="flex flex-col gap-y-0.5 bg-accent rounded-md p-1 ">
+        <div className="flex flex-col gap-y-0.125 bg-accent rounded-md p-0.25 ">
             <label htmlFor="email">E-Mail</label>
             <input
                 id="email"
                 name="email"
                 type="text"
+                defaultValue={user ?user.email ?? "" : ""}
                 className="bg-gray-200 border-3 border-main rounded-sm focus:border-4"
                 required />
         </div>
 
-        <div className="flex flex-col gap-y-0.5 bg-accent rounded-md p-1 ">
-            <label htmlFor="geburtstag">Geburtstag</label>
+        <div className="flex flex-col gap-y-0.125 bg-accent rounded-md p-0.25 ">
+            <label htmlFor="geburtstag">Birthday</label>
             <input
                 id="geburtstag"
                 name="geburtstag"
                 type="date"
+                defaultValue={user ? user.birthday ?? "" : ""}
                 className="bg-gray-200 border-3 border-main rounded-sm focus:border-4"
                 required />
         </div>
 
-        <div className="flex gap-y-0.5 gap-x-1 bg-accent rounded-md p-1 ">
+        <div className="flex gap-y-0.125 gap-x-0.25 bg-accent rounded-md p-0.25 ">
             <input
                 id="istVergeben"
                 name="istVergeben"
+                defaultValue={user ? user.name ?? false : ""}
                 type="checkbox"
                 className="bg-gray-200 border-3 border-main rounded-sm accent-main focus:border-4" />
-            <label htmlFor="istVergeben">Ist vergeben</label>
+            <label htmlFor="istVergeben">Has a Relationship</label>
         </div>
 
-        <button type="submit" className="w-fit">
-            Benutzer hinzufügen
-        </button>
+        <Button type="submit" className="w-fit">Add User</Button>
     </form>;
 }
 

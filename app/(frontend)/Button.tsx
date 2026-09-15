@@ -9,7 +9,7 @@ export default function Button({ children, className = "", link, ...props }: But
 	return (
 		<a href={link ?? "#"}>
 			<button
-				className={`rounded bg-main px-4 py-2 text-white hover:bg-main/80 ${className}`}
+				className={`rounded bg-main px-1 py-0.5 text-white hover:bg-main/80 ${className}`}
 				{...props}
 			>
 				{children}

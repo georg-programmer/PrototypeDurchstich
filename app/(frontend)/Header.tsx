@@ -5,6 +5,6 @@ type HeaderProps = {
 };
 
 export default function Header({ children }: HeaderProps) {
-	return <header className="text-2xl my-4 text-black">{children}</header>;
+	return <header className="text-2xl my-1 text-black">{children}</header>;
 }
 
