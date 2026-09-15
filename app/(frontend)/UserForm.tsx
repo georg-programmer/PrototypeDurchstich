@@ -26,7 +26,7 @@ const UserForm = ({ action, user }: Props) => {
                 id="geburtstag"
                 name="geburtstag"
                 type="date"
-                defaultValue={user?.geburtstag.toString() ?? ""}
+                defaultValue={user?.geburtstag ? new Date(user.geburtstag).toISOString().split("T")[0] : ""}
                 className="bg-gray-200 border-3 border-main rounded-sm focus:border-4"
                 required />
         </div>
@@ -35,13 +35,13 @@ const UserForm = ({ action, user }: Props) => {
             <input
                 id="istVergeben"
                 name="istVergeben"
-                defaultValue={user?.istVergeben.toString() ?? 0}
+                defaultChecked={user?.istVergeben ?? false}
                 type="checkbox"
                 className="bg-gray-200 border-3 border-main rounded-sm accent-main focus:border-4" />
             <label htmlFor="istVergeben">Has a Relationship</label>
         </div>
 
-        <Button type="submit" className="w-fit">Add User</Button>
+        <Button type="submit" className="w-fit">{user ? "Edit User" : "Add User"}</Button>
     </form>;
 }
 

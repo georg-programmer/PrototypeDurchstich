@@ -28,7 +28,7 @@ const EditUserPage = async ({ params }: Props) => {
 		const istVergeben = formData.get("istVergeben") === "on";
 
 		if (!name || Number.isNaN(geburtstag.getTime())) {
-			throw new Error("Ungültige Benutzerdaten");
+			throw new Error("Invalid user data");
 		}
 
 		await updateUser(id, name, geburtstag, istVergeben);
@@ -37,7 +37,7 @@ const EditUserPage = async ({ params }: Props) => {
 
 	return (
 		<main>
-			<h1>Benutzer bearbeiten</h1>
+			<h1>Edit User</h1>
 			<UserForm action={editUser} user={user} />
 		</main>
 	);
