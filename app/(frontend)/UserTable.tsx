@@ -12,7 +12,7 @@ const UserTable = ({ users }: Props) => {
                 <tr>
                     <th></th>
                     {users.length > 0 && Object.keys(users[0]).map((key) => (
-                        <th key={key} scope="col" className="px-6 py-3 font-semibold">
+                        <th key={key} scope="col" className="px-1.5 py-0.75 font-semibold">
                             {key}
                         </th>
                     ))}
@@ -20,12 +20,12 @@ const UserTable = ({ users }: Props) => {
             </thead>
             <tbody>
                 {users.map((user, index) => (
-                    <tr key={user.id ?? index} className="odd:bg-white even:bg-gray-100">
+                    <tr key={user?.id ?? index} className="odd:bg-white even:bg-gray-100">
                         <td>
                             <Button link={`/edit/${user.id ?? index}`}>Edit</Button>
                         </td>
                         {Object.entries(user).map(([key, value]) => (
-                            <td key={key} className="whitespace-nowrap px-6 py-4">
+                            <td key={key} className="whitespace-nowrap px-1.5 py-1">
                                 {typeof value === "object" && value !== null
                                     ? JSON.stringify(value)
                                     : String(value ?? "")}

@@ -17,13 +17,13 @@ export default function RootLayout({
 			className="h-full antialiased"
 		>
 			<body className="min-h-full flex flex-col">
-				<nav className="sticky flex bg-main text-white  w-full text-lg p-4 justify-between">
-					<div className="flex gap-4">
+				<nav className="sticky flex bg-main text-white  w-full text-lg p-1 justify-between">
+					<div className="flex gap-1">
 						<a href="/">Home</a>
-						<a href="/users">User</a>
+						<a href="/users">Users</a>
 					</div>
 				</nav>
-				<main className="p-6">{children}</main>
+				<main className="p-1.5">{children}</main>
 			</body>
 		</html>
 	);

@@ -3,4 +3,5 @@
 @theme inline {
   --color-main: var(--color-blue-400);
   --color-accent: oklch(94.75% 0.0045 264.5365);
+  --spacing: 1rem;
 }

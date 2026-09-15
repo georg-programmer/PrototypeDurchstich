@@ -38,7 +38,7 @@ const EditUserPage = async ({ params }: Props) => {
 	return (
 		<main>
 			<h1>Benutzer bearbeiten</h1>
-			<UserForm action={editUser} />
+			<UserForm action={editUser} user={user} />
 		</main>
 	);
 }
