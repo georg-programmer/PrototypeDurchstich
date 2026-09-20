@@ -17,9 +17,4 @@ model User {
   name        String
   geburtstag  DateTime @db.Date
   istVergeben Boolean
-
-  // Auth-Felder
-  email       String?  @unique // optional damit bestehende User nicht brechen
-  password    String?           // gehashtes Passwort (bcrypt)
-  createdAt   DateTime @default(now())
 }
