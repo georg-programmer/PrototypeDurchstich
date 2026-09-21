@@ -1,5 +1,7 @@
 import { getuserById, updateUser, deleteuser } from "../../../services/user.service"
 
+export const runtime = 'nodejs'
+
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const user = await getuserById(Number(id))
