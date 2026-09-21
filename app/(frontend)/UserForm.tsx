@@ -1,4 +1,4 @@
-import type {User} from "@/app/generated/prisma/client"
+import {User} from "@/app/generated/prisma/client"
 
 import Button from "./Button";
 

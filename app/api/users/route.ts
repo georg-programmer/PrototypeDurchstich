@@ -1,7 +1,5 @@
 import { getAllUsers, CreateUser } from "../../services/user.service"
 
-export const runtime = 'nodejs'
-
 export async function GET() {
   const users = await getAllUsers()
   return Response.json(users)
