@@ -1,11 +1,13 @@
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { getAllUsers, deleteuser } from "@/app/services/user.service";
 import UserTable from "../UserTable";
 import Header from "../Header";
 import Button from "../Button";
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 const IndexPage = async () => {
 
@@ -14,6 +16,7 @@ const IndexPage = async () => {
     async function handleDelete(id: number) {
         "use server";
         await deleteuser(id);
+        revalidatePath("/users");
         redirect("/users");
     }
 

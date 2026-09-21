@@ -1,4 +1,5 @@
 import { notFound, redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import UserForm from "../../UserForm";
 import { getuserById, updateUser } from "../../../services/user.service";
 
@@ -34,7 +35,8 @@ const EditUserPage = async ({ params }: Props) => {
 		}
 
 		await updateUser(id, name, geburtstag, istVergeben);
-		redirect(`/`);
+		revalidatePath("/users");
+		redirect(`/users`);
 	}
 
 	return (

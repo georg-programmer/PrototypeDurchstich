@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { CreateUser } from "../../../services/user.service";
 import Header from "../../Header";
 import UserForm from "../../UserForm";
@@ -17,7 +18,8 @@ async function addUser(formData: FormData) {
 	}
 
 	await CreateUser(name, new Date(geburtstagValue), istVergeben);
-	redirect(`/`);
+	revalidatePath("/users");
+	redirect(`/users`);
 }
 
 export default function AddUserPage() {
