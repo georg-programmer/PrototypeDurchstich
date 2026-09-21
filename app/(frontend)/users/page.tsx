@@ -5,6 +5,8 @@ import UserTable from "../UserTable";
 import Header from "../Header";
 import Button from "../Button";
 
+export const runtime = 'nodejs'
+
 const IndexPage = async () => {
 
     const users  = await getAllUsers();

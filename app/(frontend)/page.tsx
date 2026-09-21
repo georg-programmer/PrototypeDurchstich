@@ -1,4 +1,3 @@
-import { getAllUsers } from "@/app/services/user.service";
 import Header from "./Header";
 
 const IndexPage = async () => {

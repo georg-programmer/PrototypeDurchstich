@@ -3,6 +3,8 @@ import { CreateUser } from "../../../services/user.service";
 import Header from "../../Header";
 import UserForm from "../../UserForm";
 
+export const runtime = 'nodejs'
+
 async function addUser(formData: FormData) {
 	"use server";
 

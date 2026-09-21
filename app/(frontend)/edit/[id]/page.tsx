@@ -2,6 +2,8 @@ import { notFound, redirect } from "next/navigation";
 import UserForm from "../../UserForm";
 import { getuserById, updateUser } from "../../../services/user.service";
 
+export const runtime = 'nodejs'
+
 interface Props {
 	params: Promise<{ id: string }>;
 }
