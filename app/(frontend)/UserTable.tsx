@@ -1,4 +1,4 @@
-import { User } from "@/app/generated/prisma/client";
+import type { User } from "@/app/generated/prisma/client";
 import Button from "./Button";
 
 const headerLabels: Record<string, string> = {
